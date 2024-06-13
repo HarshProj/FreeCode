@@ -1,0 +1,21 @@
+.C-Compiler{
+display: flex;
+width: 100%;
+height: 100%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.C-editor{
+    width: 80%;
+    
+}
+.C-testcases{
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    border: 1px solid #DADADA;
+    background-color: #ffff;
+    height: 100%;
+    width: 80%;
+}
