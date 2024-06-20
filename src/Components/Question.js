@@ -51,6 +51,7 @@ export const Question = () => {
         // result is the output of the user's function and answer is the expected output
         const result = cb(nums[i], targets[i]);
         result==undefined?toast("Function should return a list"):setOutput(`[${result}]`);
+        console.log(result);
         if(!isEqual(result, answers[i])){
           toast(`Failed at test case${i}`)
           return false;

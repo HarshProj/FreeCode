@@ -32,7 +32,7 @@ export const Compiler = () => {
    const boilerplatecode=`function TwoSum(nums,Target){
     //Write Your Code Here
    };`
-   const[output,setOutput]=useState('[0,1]')
+   const[output,setOutput]=useState('')
    const handlesubmit=(fn)=>{
     try {
       const nums = [
@@ -48,18 +48,19 @@ export const Compiler = () => {
         [0, 1],
       ];
       const cb = new Function(`return ${fn}`)();
-      for (let i = 0; i < nums.length; i++) {
-        // result is the output of the user's function and answer is the expected output
-        const result = cb(nums[i], targets[i]);
+      // for (let i = 0; i < nums.length; i++) {
+      //   // result is the output of the user's function and answer is the expected output
+        const result = cb(nums[0], targets[0]);
         result==undefined?toast("Function should return a list"):setOutput(`[${result}]`);
-        if(!isEqual(result, answers[i])){
-          toast(`Failed at test case${i}`)
-          return false;
-        }
+        console.log(result)
+        // if(!isEqual(result, answers[0])){
+        //   toast(`Failed at test case${0}`)
+        //   return false;
+        // }
         // assert.deepStrictEqual(result, answers[i]);
-      }
-      toast("All test cases passed")
-      console.log("All Test case passed")
+      // }
+      // toast("All test cases passed")
+      // console.log("All Test case passed")
       return true;
       
     } catch (error) {
@@ -81,7 +82,7 @@ export const Compiler = () => {
      onChange={(value)=>{setValue(value)}} */}
 
      <div className="run-submit">
-       <div className="run" >Run</div>
+       <div className="run" onClick={()=>{handlesubmit((value))}} >Run</div>
        <div className="submit" onClick={()=>{handlesubmit((value))}}>Submit</div>
      </div>
     </div>
@@ -89,24 +90,14 @@ export const Compiler = () => {
     <div className="C-testcases">
       <div className="test">
         <p className="test-p">
-          Testcases
+          {/* Testcases */}
+          OTUPUT:
         </p>
       </div>
       <div className="cases-box">
 
-      <div className="cases">
-        <div className="case1">Case 1</div>
-        <div className="case2">Case 2</div>
-      </div>
-      <div className="input">
-        Input:
-      <div className="inputs-fields">
-        nums1=[2, 7, 11, 15]
-      </div>
-      </div>
-      <div className="input">
-        Output:
-      <div className="inputs-fields">
+      <div className="output">
+      <div className="output-feilds">
       {output}
       </div>
       </div>

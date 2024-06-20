@@ -19,3 +19,20 @@ justify-content: center;
     height: 100%;
     width: 80%;
 }
+.output{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+.output-feilds{
+    background-color: #F2F3F4;
+    height: 80%;
+    display: flex;
+    width: 100%;
+    font-size: larger;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
